@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>View Products</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Product Name</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.date }}</td>
+            <td>{{ product.prod_name }}</td>
+            <td>{{ product.prod_price }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

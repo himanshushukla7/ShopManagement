@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Bill for {{ purchase.customer.name }}</h2>
+
+<p><strong>Email:</strong> {{ purchase.customer.email|default:"Not provided" }}</p>
+<p><strong>Phone:</strong> {{ purchase.customer.phone|default:"Not provided" }}</p>
+<p><strong>Purchase Date:</strong> {{ purchase.purchase_date }}</p>
+
+<h3>Products Purchased:</h3>
+{% if purchase.products.all %}
+    <ul>
+        {% for product in purchase.products.all %}
+        <li>{{ product.prod_name }} - ${{ product.prod_price|floatformat:2 }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>No products purchased.</p>
+{% endif %}
+
+<p><strong>Total Amount: ${{ purchase.total_amount|floatformat:2 }}</strong></p>
+{% endblock %}

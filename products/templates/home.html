@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Welcome to the Shop Management System!</h2>
+
+<p>This is your one-stop solution to manage products, generate bills, and track purchases.</p>
+
+<div class="row stats">
+    <div class="col-md-4 col-12 stat-box">
+        <h3>Total Products</h3>
+        <p>{{ product_count }}</p>
+    </div>
+    <div class="col-md-4 col-12 stat-box">
+        <h3>Total Customers</h3>
+        <p>{{ customer_count }}</p>
+    </div>
+    <div class="col-md-4 col-12 stat-box">
+        <h3>Total Sales</h3>
+        <p>${{ total_sales }}</p>
+    </div>
+</div>
+
+<p>Use the navigation bar above to generate bills, view bills, and manage products.</p>
+{% endblock %}
