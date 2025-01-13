@@ -77,11 +77,14 @@ WSGI_APPLICATION = 'shop_management.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.dummy',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Shoppy',  # Replace with your MySQL database name
+        'USER': 'root',  # Replace with your MySQL username
+        'PASSWORD': 'pass123',  # Replace with your MySQL password
+        'HOST': 'localhost',  # Use 'localhost' for local MySQL server or the appropriate host
+        'PORT': '3306',  # Default MySQL port
     }
 }
-
-
 
 
 
